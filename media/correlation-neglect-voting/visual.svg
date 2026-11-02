@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="vis" viewBox="0 0 1000 400" role="img" aria-label="A bias that helps the group: voters who count a shared source twice weigh the signals more than their own risk taste; their vote flips and the group ends up better off. Schematic." font-family="Roboto, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <rect width="1000" height="400" fill="#f1f5f0"/>
+  <text x="48" y="104" font-size="46" font-weight="300" fill="#135b49">A bias that</text>
+  <text x="48" y="158" font-size="46" font-weight="300" fill="#135b49">helps the group.</text>
+  <text x="48" y="234" font-size="19" font-weight="300" fill="#2f3639">Counting a shared source twice is a bias.</text>
+  <text x="48" y="261" font-size="19" font-weight="300" fill="#2f3639">In our experiment, it flips votes,</text>
+  <text x="48" y="288" font-size="19" font-weight="300" fill="#2f3639">and the group ends up better off.</text>
+  <text x="48" y="352" font-size="15" font-weight="300" fill="#5b6366">Schematic, not data.</text>
+
+  <g font-size="15" font-weight="500" fill="#5b6366" letter-spacing="1.5" text-anchor="middle">
+    <text x="585" y="74">SIGNALS COUNTED ONCE</text>
+    <text x="845" y="74">COUNTED TWICE</text>
+  </g>
+  <line x1="715" y1="92" x2="715" y2="330" stroke="#d9e6d9" stroke-width="1.5"/>
+
+  <path d="M585 150 L565 298 H605 Z" fill="#9dc09f"/>
+  <line x1="511.9" y1="161.6" x2="511.9" y2="207.6" stroke="#5b6366" stroke-width="1.5"/>
+  <path d="M479.9 207.6 H543.9 L535.9 215.6 H487.9 Z" fill="#135b49"/>
+  <line x1="658.1" y1="138.4" x2="658.1" y2="184.4" stroke="#5b6366" stroke-width="1.5"/>
+  <path d="M626.1 184.4 H690.1 L682.1 192.4 H634.1 Z" fill="#135b49"/>
+  <line x1="511.9" y1="161.6" x2="658.1" y2="138.4" stroke="#135b49" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="585" cy="150" r="6" fill="#135b49"/>
+  <rect x="493.9" y="173.6" width="36" height="34" rx="4" fill="#135b49"/>
+  <rect x="645.1" y="160.4" width="26" height="24" rx="4" fill="#9dc09f" stroke="#135b49" stroke-width="1.5"/>
+  <path d="M845 150 L825 298 H865 Z" fill="#9dc09f"/>
+  <line x1="771.9" y1="138.4" x2="771.9" y2="184.4" stroke="#5b6366" stroke-width="1.5"/>
+  <path d="M739.9 184.4 H803.9 L795.9 192.4 H747.9 Z" fill="#135b49"/>
+  <line x1="918.1" y1="161.6" x2="918.1" y2="207.6" stroke="#5b6366" stroke-width="1.5"/>
+  <path d="M886.1 207.6 H950.1 L942.1 215.6 H894.1 Z" fill="#135b49"/>
+  <line x1="771.9" y1="138.4" x2="918.1" y2="161.6" stroke="#135b49" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="845" cy="150" r="6" fill="#135b49"/>
+  <rect x="753.9" y="150.4" width="36" height="34" rx="4" fill="#135b49"/>
+  <rect x="890.1" y="183.6" width="26" height="24" rx="4" fill="#9dc09f" stroke="#135b49" stroke-width="1.5"/>
+  <rect x="920.1" y="183.6" width="26" height="24" rx="4" fill="#bb2649"/>
+
+  <g font-size="14" font-weight="400" fill="#5b6366" text-anchor="middle">
+    <text x="512" y="236">risk taste</text>
+    <text x="658" y="212">signal</text>
+    <text x="772" y="212">risk taste</text>
+    <text x="918" y="236">signals</text>
+  </g>
+  <text x="932" y="174" font-size="14" font-weight="400" fill="#bb2649" text-anchor="middle">same source</text>
+
+  <text x="585" y="356" font-size="17" font-weight="300" fill="#5b6366" text-anchor="middle">vote follows own taste</text>
+  <text x="845" y="356" font-size="17" font-weight="300" fill="#135b49" text-anchor="middle">vote flips, group gains</text>
+</svg>
