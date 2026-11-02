@@ -98,6 +98,13 @@ a.pbtn:hover { border-color: var(--green); background: var(--tint); color: var(-
 .card a:hover h3 { color: var(--green); }
 .card .meta { font-size: 0.76rem; color: var(--muted); line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .card .sum { font-size: 0.82rem; line-height: 1.45; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+/* journal cover: floats top right in the text and just touches the picture, so it never hides the visual's message */
+.card-body.has-cover { display: block; }
+.card-body.has-cover > .kicker ~ * { margin-top: 0.3rem; }
+.jcover { float: right; position: relative; z-index: 1; height: 3.6rem; width: auto; margin: -1.15rem 0 0.4rem 0.75rem; border-radius: 2px; background: var(--white); box-shadow: 0 0 0 1px rgba(47, 54, 57, 0.14), 0 4px 10px -4px rgba(47, 54, 57, 0.5); transition: transform 0.15s; }
+.card a:hover .jcover { transform: translateY(-2px); }
+.venue { display: flex; align-items: center; gap: 0.75rem; }
+.jcover-venue { height: 3.4rem; width: auto; border-radius: 2px; box-shadow: 0 0 0 1px rgba(47, 54, 57, 0.14), 0 4px 10px -4px rgba(47, 54, 57, 0.5); }
 
 /* background: two columns of stations */
 .background { padding: 1.4rem 0 2.25rem; border-top: 1px solid var(--sage-2); }
@@ -158,7 +165,7 @@ mark.tbd { background: var(--yellow); color: var(--ink); font-size: 0.74rem; fon
 .draft ul { margin: 0.4rem 0 0.2rem; padding-left: 1.2rem; columns: 2; column-gap: 2rem; }
 
 @media (prefers-reduced-motion: reduce) {
-  .card a, .pbtn { transition: none; }
+  .card a, .pbtn, .jcover { transition: none; }
 }
 
 @media (max-width: 1150px) {
