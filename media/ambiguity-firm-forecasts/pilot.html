@@ -1,0 +1,61 @@
+<!-- Pilot results for "Ambiguity, Pessimism, and Firm Decisions", inlined into the Results section by build.py.
+     Source: privat/ambiguity_pessimism/pilot/Go-NoGo_Notiz_Design.md (45 management reports for fiscal 2021 analysed).
+     Unit charts: one dot per report. Each row carries its label and count, so colour is never the only cue
+     (crimson vs sage passes the colour-vision check; the third group is drawn as hollow rings). -->
+<style>
+.pl { display: grid; gap: 1rem; }
+.pl-chart { border: 1px solid var(--sage-2); border-radius: 6px; padding: 0.9rem 1rem 1rem; display: grid; gap: 0.55rem; }
+.pl-chart h3 { font-size: 0.98rem; font-weight: 500; }
+.pl-sub { font-size: 0.84rem; color: var(--muted); }
+.pl-rows { display: grid; gap: 0.45rem; margin-top: 0.2rem; }
+.pl-row { display: grid; grid-template-columns: 15rem minmax(0, 1fr) 3rem; gap: 0.8rem; align-items: center; }
+.pl-lab { font-size: 0.88rem; line-height: 1.3; }
+.pl-lab small { display: block; color: var(--muted); font-size: 0.75rem; }
+.pl-dots { display: flex; flex-wrap: wrap; gap: 4px; }
+.pl-dot { width: 13px; height: 13px; border-radius: 50%; box-sizing: border-box; }
+.pl-dot.on { background: var(--green); }
+.pl-dot.off { border: 1.5px solid var(--grey-2); background: var(--white); }
+.pl-dot.k1 { background: var(--crimson); }
+.pl-dot.k2 { background: var(--sage); }
+.pl-dot.k3 { border: 1.5px solid var(--grey-2); background: var(--white); }
+.pl-n { font-size: 0.85rem; font-variant-numeric: tabular-nums; text-align: right; }
+.pl-group { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); margin-top: 0.35rem; display: flex; align-items: center; gap: 0.4rem; }
+.pl-group .pl-dot { width: 10px; height: 10px; }
+@media (max-width: 620px) {
+  .pl-row { grid-template-columns: minmax(0, 1fr) auto; row-gap: 0.25rem; }
+  .pl-dots { grid-column: 1 / -1; grid-row: 2; }
+}
+</style>
+
+<div class="pl">
+  <div class="pl-chart">
+    <h3>The later a report was signed, the more likely it mentions the war</h3>
+    <p class="pl-sub">German management reports for 2021, by signing date relative to 24 February 2022. One dot per report; filled means the report mentions the war.</p>
+    <div class="pl-rows">
+      <div class="pl-row" title="Signed before 24 February: 0 of 4 mention the war"><span class="pl-lab">Before 24 February</span><span class="pl-dots"><i class="pl-dot off"></i><i class="pl-dot off"></i><i class="pl-dot off"></i><i class="pl-dot off"></i></span><span class="pl-n">0 / 4</span></div>
+      <div class="pl-row" title="0 to 7 days after: 5 of 6"><span class="pl-lab">0–7 days after</span><span class="pl-dots"><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot off"></i></span><span class="pl-n">5 / 6</span></div>
+      <div class="pl-row" title="8 to 14 days after: 8 of 9"><span class="pl-lab">8–14 days after</span><span class="pl-dots"><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot off"></i></span><span class="pl-n">8 / 9</span></div>
+      <div class="pl-row" title="15 to 30 days after: 11 of 11"><span class="pl-lab">15–30 days after</span><span class="pl-dots"><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i></span><span class="pl-n">11 / 11</span></div>
+      <div class="pl-row" title="More than 30 days after: 14 of 15"><span class="pl-lab">More than 30 days after</span><span class="pl-dots"><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot on"></i><i class="pl-dot off"></i></span><span class="pl-n">14 / 15</span></div>
+    </div>
+  </div>
+
+  <div class="pl-chart">
+    <h3>How the 38 reports that mention the war handle it in their forecast</h3>
+    <p class="pl-sub">One dot per report.</p>
+    <div class="pl-rows">
+      <p class="pl-group"><i class="pl-dot k1"></i>Number kept, war not quantified · 20</p>
+      <div class="pl-row" title="Kept the pre-war number and left the war out: 17"><span class="pl-lab">Kept the number, left the war out<small>e.g. Jungheinrich, Knorr-Bremse, Vitesco</small></span><span class="pl-dots"><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i></span><span class="pl-n">17</span></div>
+      <div class="pl-row" title="Forecast under a reservation: 3"><span class="pl-lab">Forecast under a reservation<small>e.g. Volkswagen, DMG Mori</small></span><span class="pl-dots"><i class="pl-dot k1"></i><i class="pl-dot k1"></i><i class="pl-dot k1"></i></span><span class="pl-n">3</span></div>
+
+      <p class="pl-group"><i class="pl-dot k2"></i>Form changed in another way · 5</p>
+      <div class="pl-row" title="Scenarios without probabilities: 3"><span class="pl-lab">Scenarios without probabilities<small>e.g. Biotest, Continental, Stada</small></span><span class="pl-dots"><i class="pl-dot k2"></i><i class="pl-dot k2"></i><i class="pl-dot k2"></i></span><span class="pl-n">3</span></div>
+      <div class="pl-row" title="Coarsened, sign left open: 1"><span class="pl-lab">Coarsened, sign left open<small>Lufthansa</small></span><span class="pl-dots"><i class="pl-dot k2"></i></span><span class="pl-n">1</span></div>
+      <div class="pl-row" title="Forecast suspended: 1"><span class="pl-lab">Forecast suspended<small>HHLA, with a terminal in Odessa</small></span><span class="pl-dots"><i class="pl-dot k2"></i></span><span class="pl-n">1</span></div>
+
+      <p class="pl-group"><i class="pl-dot k3"></i>Form unchanged · 13</p>
+      <div class="pl-row" title="War named only as an additional risk: 10"><span class="pl-lab">War named only as a risk<small>e.g. Hapag-Lloyd, Bechtle</small></span><span class="pl-dots"><i class="pl-dot k3"></i><i class="pl-dot k3"></i><i class="pl-dot k3"></i><i class="pl-dot k3"></i><i class="pl-dot k3"></i><i class="pl-dot k3"></i><i class="pl-dot k3"></i><i class="pl-dot k3"></i><i class="pl-dot k3"></i><i class="pl-dot k3"></i></span><span class="pl-n">10</span></div>
+      <div class="pl-row" title="Priced in, no effect expected, or pre-war forecast confirmed: 3"><span class="pl-lab">Priced in, no effect, or old forecast confirmed</span><span class="pl-dots"><i class="pl-dot k3"></i><i class="pl-dot k3"></i><i class="pl-dot k3"></i></span><span class="pl-n">3</span></div>
+    </div>
+  </div>
+</div>

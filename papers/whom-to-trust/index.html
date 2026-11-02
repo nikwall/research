@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Whom to Trust, and When? Aggregating Probability Forecasts in Small Crowds with Short Track Records · Niklas Wallmeier</title>
+<meta name="description" content="Should organizations weight forecasters by their track record or take the simple average? A model and 5,898 forecasts by 177 forecasters show that with small crowds and short records, the simple average is hard to beat.">
+<link rel="canonical" href="https://research.nikwall.de/papers/whom-to-trust/">
+<meta property="og:title" content="Whom to Trust, and When? Aggregating Probability Forecasts in Small Crowds with Short Track Records · Niklas Wallmeier">
+<meta property="og:description" content="Should organizations weight forecasters by their track record or take the simple average? A model and 5,898 forecasts by 177 forecasters show that with small crowds and short records, the simple average is hard to beat.">
+<meta property="og:url" content="https://research.nikwall.de/papers/whom-to-trust/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23135b49'/%3E%3Ccircle cx='22' cy='32' r='7' fill='%239dc09f'/%3E%3Ccircle cx='42' cy='32' r='7' fill='%23bb2649'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="../../style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Whom to Trust, and When? Aggregating Probability Forecasts in Small Crowds with Short Track Records", "author": [{"@type": "Person", "name": "Niklas Wallmeier"}], "datePublished": "2026", "url": "https://research.nikwall.de/papers/whom-to-trust/"}</script>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+  <a class="brand" href="../../">Niklas Wallmeier</a>
+  <nav aria-label="Site"><a href="../../#research">Research</a><a href="../../#background">Background</a><a href="../../#contact">Contact</a></nav>
+</div></header>
+
+<main class="paper">
+  <a class="back" href="../../#research">All research</a>
+  <header class="paper-head">
+    <p class="kicker"><span>Draft</span><span>2026</span><span class="theme">Expectations and forecasting</span></p>
+    <h1>Whom to Trust, and When? Aggregating Probability Forecasts in Small Crowds with Short Track Records</h1>
+    <p class="authors"><b>Niklas Wallmeier</b></p>
+    
+    <div class="actions"><a class="btn primary" href="mailto:niklas.wallmeier@gmail.com?subject=Whom to Trust, and When? Aggregating Probability Forecasts in Small Crowds with Short Track Records">Ask for the draft</a><a class="btn" href="#cite">Cite</a></div>
+    
+  </header>
+  <figure class="media"><video controls preload="metadata" poster="../../media/whom-to-trust/poster.png"><source src="../../media/whom-to-trust/whom_to_trust_30s.mp4" type="video/mp4"></video><figcaption>30 seconds from the problem to the result: why organizations need few people, the simple average and patience with track records.</figcaption></figure>
+  <section class="inshort"><h2>In short</h2><p>Should organizations weight forecasters by their track record or take the simple average? A model and 5,898 forecasts by 177 forecasters show that with small crowds and short records, the simple average is hard to beat.</p></section>
+  <section><h2>Whom to trust, and when? Try it for your crowd</h2><p class="quiet">Results will appear here once the draft is public.</p><div class="results-embed"><!-- Interactive calculator for "Whom to Trust, and When?".
+     Inlined into the paper page by build.py (results_embed); uses the page's Roboto and arq colour tokens.
+     Model of the paper: share of the averaging gain 1 - 1/N; reliability of a record R(K) = K / (K + K0);
+     critical record length K* = (1 - 1/N) K0; best weight on the record K / (K + K*). K0 = 63 is the
+     estimate from the platform's data. The simulation in Appendix A finds that unshrunk performance
+     weights need about twice K* before they pay. -->
+<style>
+.wt { border: 1px solid var(--sage-2); border-radius: 6px; background: var(--white); padding: 1rem 1.1rem 1.1rem; display: grid; gap: 1rem; }
+.wt-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 0.9rem 1.6rem; }
+.wt-ctl { display: grid; gap: 0.3rem; }
+.wt-ctl label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--green); display: flex; justify-content: space-between; align-items: baseline; }
+.wt-ctl output { font-size: 1.35rem; font-weight: 500; letter-spacing: 0; color: var(--ink); text-transform: none; }
+.wt-ctl input[type=range] { width: 100%; accent-color: var(--green); }
+.wt-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 0.6rem; }
+.wt-card { background: var(--tint); border-radius: 6px; padding: 0.65rem 0.8rem; display: grid; gap: 0.15rem; }
+.wt-card .v { font-size: 2rem; font-weight: 500; line-height: 1.1; color: var(--green); }
+.wt-card .t { font-size: 0.85rem; color: var(--ink); }
+.wt-card.hot .v { color: var(--crimson); }
+.wt-svg { width: 100%; height: auto; display: block; }
+.wt-svg text { font-family: var(--font); font-size: 12px; fill: var(--muted); }
+.wt-svg .lbl { font-weight: 500; fill: var(--ink); }
+.wt-svg .on { fill: var(--crimson); font-weight: 500; }
+.wt-advice { margin: 0; padding: 0.15rem 0 0.15rem 0.8rem; border-left: 3px solid var(--green); font-size: 1.05rem; line-height: 1.45; color: var(--ink); }
+.wt-advice.go { border-left-color: var(--crimson); }
+.wt-note { font-size: 0.82rem; color: var(--muted); }
+</style>
+
+<div class="wt" id="wt">
+  <div class="wt-controls">
+    <div class="wt-ctl">
+      <label for="wt-n">People in the crowd <output id="wt-n-out">5</output></label>
+      <input type="range" id="wt-n" min="1" max="30" step="1" value="5">
+    </div>
+    <div class="wt-ctl">
+      <label for="wt-k">Resolved questions per person <output id="wt-k-out">12</output></label>
+      <input type="range" id="wt-k" min="0" max="150" step="1" value="12">
+    </div>
+  </div>
+  <div class="wt-cards">
+    <div class="wt-card"><span class="v" id="wt-gain">80%</span><span class="t">of what averaging can achieve, from this many people</span></div>
+    <div class="wt-card" id="wt-rel-card"><span class="v" id="wt-rel">16%</span><span class="t">of the differences in track records reflect skill rather than luck</span></div>
+    <div class="wt-card" id="wt-w-card"><span class="v" id="wt-w">19%</span><span class="t">weight the record deserves; equal weights get the rest</span></div>
+  </div>
+  <svg class="wt-svg" id="wt-svg" viewBox="0 0 720 112" role="img" aria-label="How much a track record shows skill, from mostly luck to mostly skill, with the threshold at one half"></svg>
+  <p class="wt-advice" id="wt-advice"></p>
+  <p class="wt-note">Model of the paper with K<sub>0</sub> = 63, estimated from the platform's data: a record of K resolved questions reflects skill to the share K / (K + 63). Crowds with more varied skill learn faster. Unshrunk weights by past accuracy need about twice the critical record length before they pay (Appendix A).</p>
+</div>
+
+<script>
+(function () {
+  var K0 = 63;
+  var root = document.getElementById("wt");
+  var n = document.getElementById("wt-n"), k = document.getElementById("wt-k");
+  function pct(v) { return Math.round(v * 100) + "%"; }
+  function draw(rel, kstar) {
+    var X0 = 20, X1 = 700, W = X1 - X0;
+    var x = function (r) { return X0 + W * r; };
+    var s = '<defs><linearGradient id="wt-g" x1="0" x2="1"><stop offset="0" stop-color="#e3ece1"/><stop offset="0.5" stop-color="#9dc09f"/><stop offset="1" stop-color="#135b49"/></linearGradient></defs>';
+    s += '<text x="' + X0 + '" y="24" class="lbl">mostly luck</text>';
+    s += '<text x="' + X1 + '" y="24" text-anchor="end" class="lbl">mostly skill</text>';
+    s += '<text x="' + x(0.5) + '" y="24" text-anchor="middle" class="on">½: weights start to pay</text>';
+    s += '<rect x="' + X0 + '" y="36" width="' + W + '" height="22" rx="11" fill="url(#wt-g)"/>';
+    s += '<line x1="' + x(0.5) + '" y1="30" x2="' + x(0.5) + '" y2="64" stroke="#bb2649" stroke-width="2.5"/>';
+    var px = x(Math.min(rel, 0.999));
+    s += '<polygon points="' + (px - 9) + ',84 ' + (px + 9) + ',84 ' + px + ',68" fill="#2f3639"/>';
+    s += '<text x="' + Math.max(X0 + 60, Math.min(X1 - 60, px)) + '" y="104" text-anchor="middle" class="lbl">your crowd: ' + pct(rel) + '</text>';
+    document.getElementById("wt-svg").innerHTML = s;
+  }
+  function render() {
+    var N = +n.value, K = +k.value;
+    document.getElementById("wt-n-out").textContent = N;
+    document.getElementById("wt-k-out").textContent = K;
+    var gain = 1 - 1 / N;
+    var rel = K / (K + K0);
+    var kstar = (1 - 1 / N) * K0;
+    var w = N === 1 ? 1 : K / (K + kstar);
+    document.getElementById("wt-gain").textContent = pct(gain);
+    document.getElementById("wt-rel").textContent = pct(rel);
+    document.getElementById("wt-w").textContent = N === 1 ? "–" : pct(w);
+    document.getElementById("wt-rel-card").classList.toggle("hot", rel >= 0.5);
+    draw(rel, kstar);
+    var a = document.getElementById("wt-advice"), msg, go = false;
+    if (N === 1) {
+      msg = "One person is not a crowd. Ask a few more: two people already capture half of what averaging can achieve, five about 80 percent.";
+    } else if (K < kstar) {
+      msg = "Average everyone and let recent forecasts count more; give the record no more than " + pct(w) + " of the weight. At " + K + " resolved questions, records show mostly luck, and ranking people by them would add noise. Records start to pay at about " + Math.round(kstar) + " questions.";
+    } else if (K < 2 * kstar) {
+      go = true;
+      msg = "Start trusting the record, but only in proportion to how reliable it is: give it about " + pct(w) + " of the weight and equal weights the rest. Weighting by raw records would still lose.";
+    } else {
+      go = true;
+      msg = "Records are now reliable enough that weighting by past accuracy pays. Shrinking towards equal weights is still never worse.";
+    }
+    a.textContent = msg;
+    a.classList.toggle("go", go);
+  }
+  n.addEventListener("input", render);
+  k.addEventListener("input", render);
+  render();
+})();
+</script>
+</div></section>
+  <section id="cite"><h2>Cite</h2>
+    <p class="ref">Niklas Wallmeier (2026). “Whom to Trust, and When? Aggregating Probability Forecasts in Small Crowds with Short Track Records.” Work in progress.</p>
+    <div class="bib"><pre id="bib">@unpublished{wallmeier2026whom,
+  author = {Wallmeier, Niklas},
+  title = {{Whom to Trust, and When? Aggregating Probability Forecasts in Small Crowds with Short Track Records}},
+  year = {2026},
+  note = {Work in progress}
+}</pre><button type="button" class="btn" data-copy="bib">Copy BibTeX</button></div>
+  </section>
+  <nav class="prevnext" aria-label="More research"><a class="pn prev" href="../ambiguity-firm-forecasts/"><span>Previous</span>Ambiguity, Pessimism, and Firm Decisions</a><a class="pn next" href="../many-designs-forecast-aggregation/"><span>Next</span>A Many-Designs Study of 516 Algorithms Challenges the Predictability of Wisdom of the Crowd Forecast Aggregation</a></nav>
+</main>
+<footer class="foot" id="contact"><div class="foot-in">
+  <div><p class="foot-name">Niklas Wallmeier</p><p><a href="mailto:niklas.wallmeier@gmail.com">niklas.wallmeier@gmail.com</a></p></div>
+  <div class="foot-links"><a href="https://nikwall.de/">nikwall.de</a><a href="../../#research">Research</a><span>Updated November 2026</span></div>
+</div></footer>
+<script src="../../app.js" defer></script>
+</body>
+</html>

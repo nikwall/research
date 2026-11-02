@@ -1,0 +1,156 @@
+<!-- Interactive explainer for "Ambiguity, Pessimism, and Firm Decisions".
+     Inlined into the paper page by build.py (media type "embed"); uses the page's Roboto and arq colour tokens.
+     Numbers are illustrative: a firm that expected revenue of 120-130 million before the shock. -->
+<style>
+.ax { border: 1px solid var(--sage-2); border-radius: 6px; background: var(--white); padding: 1rem 1.1rem 1.1rem; display: grid; gap: 0.9rem; }
+.ax-controls { display: grid; gap: 0.55rem; }
+.ax-group { display: flex; flex-wrap: wrap; align-items: center; gap: 0.35rem; }
+.ax-label { width: 8.5rem; flex: none; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--green); }
+.ax-group button { font: inherit; font-size: 0.85rem; font-weight: 400; color: var(--ink); background: var(--white); border: 1px solid var(--sage-2); border-radius: 99px; padding: 0.25rem 0.75rem; cursor: pointer; }
+.ax-group button:hover { border-color: var(--green); }
+.ax-group button[aria-checked="true"] { background: var(--tint); border-color: var(--green); color: var(--green); font-weight: 500; }
+.ax-group button.ax-amb[aria-checked="true"] { border-color: var(--crimson); color: var(--crimson); }
+.ax-stage { background: var(--tint); border-radius: 6px; padding: 0.6rem 0.8rem 0.8rem; display: grid; gap: 0.5rem; }
+.ax-svg { width: 100%; height: auto; display: block; }
+.ax-svg text { font-family: var(--font); font-size: 12px; fill: var(--muted); }
+.ax-svg .lbl { font-weight: 500; fill: var(--ink); }
+.ax-svg .axis { stroke: var(--grey-2); stroke-width: 1; }
+.ax-svg .before { fill: none; stroke: var(--grey-2); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.ax-svg .after { fill: var(--green); }
+.ax-svg .excl { fill: url(#ax-hatch); stroke: var(--crimson); stroke-width: 1.5; }
+.ax-svg .none { fill: var(--crimson); font-size: 14px; font-weight: 500; }
+.ax-svg.ax-narrow text { font-size: 15px; }
+.ax-svg.ax-narrow .none { font-size: 17px; }
+.ax-quote { margin: 0; padding: 0.15rem 0 0.15rem 0.8rem; border-left: 3px solid var(--green); font-size: 1.05rem; line-height: 1.45; color: var(--ink); }
+.ax-form { font-size: 0.92rem; }
+.ax-form b { color: var(--green); }
+.ax-example { font-size: 0.85rem; color: var(--muted); }
+.ax-key { font-size: 0.95rem; }
+.ax-key b { color: var(--crimson); font-weight: 500; }
+@media (max-width: 560px) { .ax-label { width: 100%; } }
+</style>
+
+<div class="ax" id="ax">
+  <div class="ax-controls">
+    <div class="ax-group" role="radiogroup" aria-label="What the firm faces">
+      <span class="ax-label">The firm faces</span>
+      <button type="button" role="radio" data-k="m" data-v="pess">Pessimism</button>
+      <button type="button" role="radio" data-k="m" data-v="risk">Risk</button>
+      <button type="button" role="radio" data-k="m" data-v="hide">Bad news to hide</button>
+      <button type="button" role="radio" data-k="m" data-v="amb" class="ax-amb">Ambiguity</button>
+    </div>
+    <div class="ax-group" role="radiogroup" aria-label="Is the shock good or bad news for the firm">
+      <span class="ax-label">For this firm the shock is</span>
+      <button type="button" role="radio" data-k="s" data-v="bad">Bad news</button>
+      <button type="button" role="radio" data-k="s" data-v="good">Good news</button>
+    </div>
+    <div class="ax-group" role="radiogroup" aria-label="Are forecasts voluntary or mandatory">
+      <span class="ax-label">Forecasts are</span>
+      <button type="button" role="radio" data-k="r" data-v="vol">Voluntary (US)</button>
+      <button type="button" role="radio" data-k="r" data-v="man">Mandatory (Germany)</button>
+    </div>
+  </div>
+
+  <div class="ax-stage">
+    <svg class="ax-svg" id="ax-svg" viewBox="0 0 600 112" role="img" aria-labelledby="ax-quote"></svg>
+    <blockquote class="ax-quote" id="ax-quote" aria-live="polite"></blockquote>
+    <p class="ax-form" id="ax-form"></p>
+    <p class="ax-example" id="ax-example" hidden></p>
+  </div>
+
+  <p class="ax-key"><b>Only ambiguity gives the same answer for winners and losers of a shock.</b> Pessimism and risk move or widen the number in the direction of the news, and firms hide only bad news. That difference is how the study tells ambiguity apart from the other explanations.</p>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById("ax");
+  if (!root) return;
+  var state = { m: "amb", s: "good", r: "man" };
+
+  // [low, high] of the new forecast, or null for no number; "excl" keeps the old number and leaves the shock out.
+  var OUT = {
+    pess: { bad: { band: [105, 115], say: "We now expect revenue of {c}105–115 million.", form: "The number falls." },
+            good: { band: [122, 132], say: "We now expect revenue of {c}122–132 million.", form: "The number rises, but by less than the news would justify." } },
+    risk: { bad: { band: [100, 125], say: "Depending on how the situation develops, we expect revenue of {c}100–125 million.", form: "The range widens." },
+            good: { band: [120, 145], say: "Depending on how the situation develops, we expect revenue of {c}120–145 million.", form: "The range widens." } },
+    hide: { bad: { vol: { band: null, say: "We are withdrawing our guidance.", form: "Silence, but only when the news is bad." },
+                   man: { band: [110, 120], say: "We expect revenue of {c}110–120 million.", form: "The law requires a number, so the bad news shows." } },
+            good: { band: [135, 145], say: "We now expect revenue of {c}135–145 million.", form: "Good news is reported in full." } },
+    amb: { vol: { band: null, say: "As the effects cannot be reasonably estimated, we are withdrawing our guidance.", form: "Silence, for winners and losers alike." },
+           man: { band: "excl", say: "Excluding the effects of the war, which cannot yet be quantified, we expect revenue of {c}120–130 million.", form: "The old number stays and the shock is left out, for winners and losers alike." } }
+  };
+  var EXAMPLES = {
+    "amb-vol": "Example: General Electric withdrew its 2020 outlook in April 2020, saying it could not forecast the recovery with reasonable accuracy.",
+    "amb-man-good": "Example: Rheinmetall and K+S left the war out of their 2022 forecasts, although both stood to gain from it.",
+    "amb-man-bad": "Example: Vitesco left the war out of its 2022 forecast because its effects could not yet be quantified."
+  };
+
+  function pick() {
+    var m = OUT[state.m];
+    var o = m[state.s] || m[state.r];
+    if (o && !o.say) o = o[state.r];
+    return o;
+  }
+
+  // On narrow screens the chart uses a smaller coordinate system, so its text stays readable.
+  var X0, X1, W, STEP, V0 = 90, V1 = 150;
+  function x(v) { return X0 + (v - V0) / (V1 - V0) * (X1 - X0); }
+
+  function draw(o) {
+    var svg = document.getElementById("ax-svg");
+    var narrow = svg.clientWidth > 0 && svg.clientWidth < 520;
+    W = narrow ? 360 : 600; X0 = narrow ? 64 : 100; X1 = W - (narrow ? 30 : 22); STEP = narrow ? 20 : 10;
+    svg.setAttribute("viewBox", "0 0 " + W + " 112");
+    svg.classList.toggle("ax-narrow", narrow);
+    var c = state.r === "vol" ? "$" : "€";
+    var s = '<defs><pattern id="ax-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">' +
+            '<rect width="6" height="6" fill="var(--white)"/><line x1="0" y1="0" x2="0" y2="6" stroke="var(--rose-2)" stroke-width="3"/></pattern></defs>';
+    s += '<text x="' + (X0 - 8) + '" y="27" text-anchor="end" class="lbl">Before</text>';
+    s += '<rect class="before" x="' + x(120) + '" y="15" width="' + (x(130) - x(120)) + '" height="16" rx="3"/>';
+    s += '<text x="' + (X0 - 8) + '" y="61" text-anchor="end" class="lbl">After</text>';
+    if (o.band === null) {
+      s += '<text x="' + x(125) + '" y="62" text-anchor="middle" class="none">no number</text>';
+    } else if (o.band === "excl") {
+      s += '<rect class="after" x="' + x(120) + '" y="49" width="' + (x(130) - x(120)) + '" height="16" rx="3"/>';
+      s += '<rect class="excl" x="' + x(132) + '" y="49" width="' + (x(146) - x(132)) + '" height="16" rx="3"/>';
+      s += '<text x="' + x(139) + '" y="44" text-anchor="middle">' + (narrow ? "left out" : "shock left out") + '</text>';
+    } else {
+      s += '<rect class="after" x="' + x(o.band[0]) + '" y="49" width="' + (x(o.band[1]) - x(o.band[0])) + '" height="16" rx="3"/>';
+    }
+    s += '<line class="axis" x1="' + X0 + '" y1="84" x2="' + X1 + '" y2="84"/>';
+    for (var v = V0; v <= V1; v += STEP) {
+      s += '<line class="axis" x1="' + x(v) + '" y1="80" x2="' + x(v) + '" y2="88"/>';
+      s += '<text x="' + x(v) + '" y="104" text-anchor="middle">' + c + v + 'm</text>';
+    }
+    svg.innerHTML = s;
+  }
+  var lastNarrow = null;
+  window.addEventListener("resize", function () {
+    var n = document.getElementById("ax-svg").clientWidth < 520;
+    if (n !== lastNarrow) { lastNarrow = n; render(); }
+  });
+
+  function render() {
+    root.querySelectorAll("button[data-k]").forEach(function (b) {
+      b.setAttribute("aria-checked", state[b.getAttribute("data-k")] === b.getAttribute("data-v") ? "true" : "false");
+    });
+    var o = pick();
+    var c = state.r === "vol" ? "$" : "€";
+    draw(o);
+    document.getElementById("ax-quote").textContent = "“" + o.say.replace("{c}", c) + "”";
+    document.getElementById("ax-form").innerHTML = "<b>Form:</b> " + o.form;
+    var ex = EXAMPLES[state.m + "-" + state.r + "-" + state.s] || EXAMPLES[state.m + "-" + state.r];
+    var exEl = document.getElementById("ax-example");
+    exEl.hidden = !ex;
+    exEl.textContent = ex || "";
+  }
+
+  root.addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-k]");
+    if (!b) return;
+    state[b.getAttribute("data-k")] = b.getAttribute("data-v");
+    render();
+  });
+  render();
+})();
+</script>

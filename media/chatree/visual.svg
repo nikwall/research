@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="vis" viewBox="0 0 1000 400" role="img" aria-label="Online experiments, face to face: chaTree adds live video chat to oTree and records who talks when." font-family="Roboto, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <symbol id="cht-person" viewBox="-16 -36 32 58"><circle cx="0" cy="-24" r="10"/><path d="M-15 21 v-15 a15 15 0 0 1 30 0 v15 z"/></symbol>
+  </defs>
+  <rect width="1000" height="400" fill="#f1f5f0"/>
+  <text x="48" y="104" font-size="46" font-weight="300" fill="#135b49">Online experiments,</text>
+  <text x="48" y="158" font-size="46" font-weight="300" fill="#135b49">face to face.</text>
+  <text x="48" y="234" font-size="19" font-weight="300" fill="#2f3639">A free add-on for oTree:</text>
+  <text x="48" y="261" font-size="19" font-weight="300" fill="#2f3639">live video chat, plus a record</text>
+  <text x="48" y="288" font-size="19" font-weight="300" fill="#2f3639">of who talks when.</text>
+  <rect x="480" y="52" width="470" height="300" rx="10" fill="#ffffff" stroke="#9dc09f" stroke-width="2"/>
+  <line x1="480" y1="84" x2="950" y2="84" stroke="#d9e6d9" stroke-width="1.5"/>
+  <circle cx="500" cy="68" r="5" fill="#d9e6d9"/><circle cx="518" cy="68" r="5" fill="#d9e6d9"/><circle cx="536" cy="68" r="5" fill="#d9e6d9"/>
+  <text x="560" y="73" font-size="14" font-weight="400" fill="#5b6366">oTree · group stage · video chat</text>
+  <rect x="500" y="104" width="140" height="112" rx="6" fill="#f1f5f0" stroke="#9dc09f" stroke-width="1.5"/><use href="#cht-person" x="548" y="126" width="44" height="80" fill="#135b49"/><text x="510" y="208" font-size="13" font-weight="400" fill="#5b6366">P1</text><rect x="650" y="104" width="140" height="112" rx="6" fill="#f1f5f0" stroke="#9dc09f" stroke-width="1.5"/><use href="#cht-person" x="698" y="126" width="44" height="80" fill="#135b49"/><text x="660" y="208" font-size="13" font-weight="400" fill="#5b6366">P2</text><rect x="800" y="104" width="140" height="112" rx="6" fill="#f1f5f0" stroke="#9dc09f" stroke-width="1.5"/><use href="#cht-person" x="848" y="126" width="44" height="80" fill="#135b49"/><text x="810" y="208" font-size="13" font-weight="400" fill="#5b6366">P3</text>
+  <text x="500" y="242" font-size="13" font-weight="500" fill="#5b6366" letter-spacing="1.2">WHO TALKS WHEN</text>
+  <circle cx="902" cy="238" r="5" fill="#bb2649"/>
+  <text x="912" y="243" font-size="13" font-weight="400" fill="#bb2649">rec</text>
+  <text x="500" y="267" font-size="13" font-weight="400" fill="#5b6366">P1</text><line x1="530" y1="262" x2="930" y2="262" stroke="#d9e6d9" stroke-width="2"/><rect x="530" y="257" width="70" height="10" rx="3" fill="#135b49"/><rect x="680" y="257" width="40" height="10" rx="3" fill="#135b49"/><rect x="830" y="257" width="50" height="10" rx="3" fill="#135b49"/><text x="500" y="291" font-size="13" font-weight="400" fill="#5b6366">P2</text><line x1="530" y1="286" x2="930" y2="286" stroke="#d9e6d9" stroke-width="2"/><rect x="610" y="281" width="60" height="10" rx="3" fill="#135b49"/><rect x="740" y="281" width="80" height="10" rx="3" fill="#135b49"/><text x="500" y="315" font-size="13" font-weight="400" fill="#5b6366">P3</text><line x1="530" y1="310" x2="930" y2="310" stroke="#d9e6d9" stroke-width="2"/><rect x="550" y="305" width="30" height="10" rx="3" fill="#135b49"/><rect x="660" y="305" width="30" height="10" rx="3" fill="#135b49"/><rect x="880" y="305" width="20" height="10" rx="3" fill="#135b49"/>
+</svg>

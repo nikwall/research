@@ -1,0 +1,101 @@
+<!-- Interactive calculator for "Whom to Trust, and When?".
+     Inlined into the paper page by build.py (results_embed); uses the page's Roboto and arq colour tokens.
+     Model of the paper: share of the averaging gain 1 - 1/N; reliability of a record R(K) = K / (K + K0);
+     critical record length K* = (1 - 1/N) K0; best weight on the record K / (K + K*). K0 = 63 is the
+     estimate from the platform's data. The simulation in Appendix A finds that unshrunk performance
+     weights need about twice K* before they pay. -->
+<style>
+.wt { border: 1px solid var(--sage-2); border-radius: 6px; background: var(--white); padding: 1rem 1.1rem 1.1rem; display: grid; gap: 1rem; }
+.wt-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 0.9rem 1.6rem; }
+.wt-ctl { display: grid; gap: 0.3rem; }
+.wt-ctl label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--green); display: flex; justify-content: space-between; align-items: baseline; }
+.wt-ctl output { font-size: 1.35rem; font-weight: 500; letter-spacing: 0; color: var(--ink); text-transform: none; }
+.wt-ctl input[type=range] { width: 100%; accent-color: var(--green); }
+.wt-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 0.6rem; }
+.wt-card { background: var(--tint); border-radius: 6px; padding: 0.65rem 0.8rem; display: grid; gap: 0.15rem; }
+.wt-card .v { font-size: 2rem; font-weight: 500; line-height: 1.1; color: var(--green); }
+.wt-card .t { font-size: 0.85rem; color: var(--ink); }
+.wt-card.hot .v { color: var(--crimson); }
+.wt-svg { width: 100%; height: auto; display: block; }
+.wt-svg text { font-family: var(--font); font-size: 12px; fill: var(--muted); }
+.wt-svg .lbl { font-weight: 500; fill: var(--ink); }
+.wt-svg .on { fill: var(--crimson); font-weight: 500; }
+.wt-advice { margin: 0; padding: 0.15rem 0 0.15rem 0.8rem; border-left: 3px solid var(--green); font-size: 1.05rem; line-height: 1.45; color: var(--ink); }
+.wt-advice.go { border-left-color: var(--crimson); }
+.wt-note { font-size: 0.82rem; color: var(--muted); }
+</style>
+
+<div class="wt" id="wt">
+  <div class="wt-controls">
+    <div class="wt-ctl">
+      <label for="wt-n">People in the crowd <output id="wt-n-out">5</output></label>
+      <input type="range" id="wt-n" min="1" max="30" step="1" value="5">
+    </div>
+    <div class="wt-ctl">
+      <label for="wt-k">Resolved questions per person <output id="wt-k-out">12</output></label>
+      <input type="range" id="wt-k" min="0" max="150" step="1" value="12">
+    </div>
+  </div>
+  <div class="wt-cards">
+    <div class="wt-card"><span class="v" id="wt-gain">80%</span><span class="t">of what averaging can achieve, from this many people</span></div>
+    <div class="wt-card" id="wt-rel-card"><span class="v" id="wt-rel">16%</span><span class="t">of the differences in track records reflect skill rather than luck</span></div>
+    <div class="wt-card" id="wt-w-card"><span class="v" id="wt-w">19%</span><span class="t">weight the record deserves; equal weights get the rest</span></div>
+  </div>
+  <svg class="wt-svg" id="wt-svg" viewBox="0 0 720 112" role="img" aria-label="How much a track record shows skill, from mostly luck to mostly skill, with the threshold at one half"></svg>
+  <p class="wt-advice" id="wt-advice"></p>
+  <p class="wt-note">Model of the paper with K<sub>0</sub> = 63, estimated from the platform's data: a record of K resolved questions reflects skill to the share K / (K + 63). Crowds with more varied skill learn faster. Unshrunk weights by past accuracy need about twice the critical record length before they pay (Appendix A).</p>
+</div>
+
+<script>
+(function () {
+  var K0 = 63;
+  var root = document.getElementById("wt");
+  var n = document.getElementById("wt-n"), k = document.getElementById("wt-k");
+  function pct(v) { return Math.round(v * 100) + "%"; }
+  function draw(rel, kstar) {
+    var X0 = 20, X1 = 700, W = X1 - X0;
+    var x = function (r) { return X0 + W * r; };
+    var s = '<defs><linearGradient id="wt-g" x1="0" x2="1"><stop offset="0" stop-color="#e3ece1"/><stop offset="0.5" stop-color="#9dc09f"/><stop offset="1" stop-color="#135b49"/></linearGradient></defs>';
+    s += '<text x="' + X0 + '" y="24" class="lbl">mostly luck</text>';
+    s += '<text x="' + X1 + '" y="24" text-anchor="end" class="lbl">mostly skill</text>';
+    s += '<text x="' + x(0.5) + '" y="24" text-anchor="middle" class="on">½: weights start to pay</text>';
+    s += '<rect x="' + X0 + '" y="36" width="' + W + '" height="22" rx="11" fill="url(#wt-g)"/>';
+    s += '<line x1="' + x(0.5) + '" y1="30" x2="' + x(0.5) + '" y2="64" stroke="#bb2649" stroke-width="2.5"/>';
+    var px = x(Math.min(rel, 0.999));
+    s += '<polygon points="' + (px - 9) + ',84 ' + (px + 9) + ',84 ' + px + ',68" fill="#2f3639"/>';
+    s += '<text x="' + Math.max(X0 + 60, Math.min(X1 - 60, px)) + '" y="104" text-anchor="middle" class="lbl">your crowd: ' + pct(rel) + '</text>';
+    document.getElementById("wt-svg").innerHTML = s;
+  }
+  function render() {
+    var N = +n.value, K = +k.value;
+    document.getElementById("wt-n-out").textContent = N;
+    document.getElementById("wt-k-out").textContent = K;
+    var gain = 1 - 1 / N;
+    var rel = K / (K + K0);
+    var kstar = (1 - 1 / N) * K0;
+    var w = N === 1 ? 1 : K / (K + kstar);
+    document.getElementById("wt-gain").textContent = pct(gain);
+    document.getElementById("wt-rel").textContent = pct(rel);
+    document.getElementById("wt-w").textContent = N === 1 ? "–" : pct(w);
+    document.getElementById("wt-rel-card").classList.toggle("hot", rel >= 0.5);
+    draw(rel, kstar);
+    var a = document.getElementById("wt-advice"), msg, go = false;
+    if (N === 1) {
+      msg = "One person is not a crowd. Ask a few more: two people already capture half of what averaging can achieve, five about 80 percent.";
+    } else if (K < kstar) {
+      msg = "Average everyone and let recent forecasts count more; give the record no more than " + pct(w) + " of the weight. At " + K + " resolved questions, records show mostly luck, and ranking people by them would add noise. Records start to pay at about " + Math.round(kstar) + " questions.";
+    } else if (K < 2 * kstar) {
+      go = true;
+      msg = "Start trusting the record, but only in proportion to how reliable it is: give it about " + pct(w) + " of the weight and equal weights the rest. Weighting by raw records would still lose.";
+    } else {
+      go = true;
+      msg = "Records are now reliable enough that weighting by past accuracy pays. Shrinking towards equal weights is still never worse.";
+    }
+    a.textContent = msg;
+    a.classList.toggle("go", go);
+  }
+  n.addEventListener("input", render);
+  k.addEventListener("input", render);
+  render();
+})();
+</script>

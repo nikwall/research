@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Counting What Counts · Niklas Wallmeier</title>
+<meta name="description" content="Adding up output misleads when a unit of output is worth more in some states than in others. A framework for aligned performance measures, tested on football data; the first of three papers.">
+<link rel="canonical" href="https://research.nikwall.de/papers/counting-what-counts/">
+<meta property="og:title" content="Counting What Counts · Niklas Wallmeier">
+<meta property="og:description" content="Adding up output misleads when a unit of output is worth more in some states than in others. A framework for aligned performance measures, tested on football data; the first of three papers.">
+<meta property="og:url" content="https://research.nikwall.de/papers/counting-what-counts/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23135b49'/%3E%3Ccircle cx='22' cy='32' r='7' fill='%239dc09f'/%3E%3Ccircle cx='42' cy='32' r='7' fill='%23bb2649'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../fonts/fonts.css">
+<link rel="stylesheet" href="../../style.css">
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ScholarlyArticle", "headline": "Counting What Counts: Misaligned Performance Measures, State-Dependent Value, and the Prediction of Future Performance", "author": [{"@type": "Person", "name": "Niklas Wallmeier"}], "datePublished": "2026", "url": "https://research.nikwall.de/papers/counting-what-counts/"}</script>
+</head>
+<body>
+<header class="bar"><div class="bar-in">
+  <a class="brand" href="../../">Niklas Wallmeier</a>
+  <nav aria-label="Site"><a href="../../#research">Research</a><a href="../../#background">Background</a><a href="../../#contact">Contact</a></nav>
+</div></header>
+
+<main class="paper">
+  <a class="back" href="../../#research">All research</a>
+  <header class="paper-head">
+    <p class="kicker"><span>Draft</span><span>2026</span><span class="theme">Measuring performance</span></p>
+    <h1>Counting What Counts: Misaligned Performance Measures, State-Dependent Value, and the Prediction of Future Performance</h1>
+    <p class="authors"><b>Niklas Wallmeier</b></p>
+    
+    <div class="actions"><a class="btn primary" href="mailto:niklas.wallmeier@gmail.com?subject=Counting What Counts">Ask for the draft</a><a class="btn" href="#cite">Cite</a></div>
+    
+  </header>
+  <figure class="media embed"><svg xmlns="http://www.w3.org/2000/svg" class="vis" viewBox="0 0 1000 400" role="img" aria-label="One goal, three values: a goal at 0–0 adds 2 points, at 0–1 it adds 1 point, at 3–0 it adds nothing." font-family="Roboto, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <rect width="1000" height="400" fill="#f1f5f0"/>
+  <text x="48" y="104" font-size="46" font-weight="300" fill="#135b49">One goal,</text>
+  <text x="48" y="158" font-size="46" font-weight="300" fill="#135b49">three values.</text>
+  <text x="48" y="234" font-size="19" font-weight="300" fill="#2f3639">Statistics count every goal as one.</text>
+  <text x="48" y="261" font-size="19" font-weight="300" fill="#2f3639">What it adds to the result</text>
+  <text x="48" y="288" font-size="19" font-weight="300" fill="#2f3639">depends on the score.</text>
+  <text x="48" y="352" font-size="15" font-weight="300" fill="#5b6366">Win 3 points, draw 1, loss 0.</text>
+
+  <g font-size="15" font-weight="500" fill="#5b6366" letter-spacing="1.5">
+    <text x="497" y="78" text-anchor="middle">SCORE BEFORE</text>
+    <text x="667" y="78" text-anchor="middle">AFTER THE GOAL</text>
+    <text x="800" y="78">POINTS ADDED</text>
+  </g>
+
+  <g font-size="30" font-weight="400" fill="#2f3639" text-anchor="middle">
+    <!-- 0–0 to 1–0: draw becomes win -->
+    <rect x="442" y="100" width="110" height="54" rx="8" fill="#ffffff" stroke="#9dc09f" stroke-width="2"/>
+    <text x="497" y="138">0 – 0</text>
+    <path d="M562 127 h40 m-10 -8 l10 8 l-10 8" fill="none" stroke="#5b6366" stroke-width="2"/>
+    <rect x="612" y="100" width="110" height="54" rx="8" fill="#ffffff" stroke="#135b49" stroke-width="2"/>
+    <text x="667" y="138">1 – 0</text>
+
+    <!-- 0–1 to 1–1: loss becomes draw -->
+    <rect x="442" y="190" width="110" height="54" rx="8" fill="#ffffff" stroke="#9dc09f" stroke-width="2"/>
+    <text x="497" y="228">0 – 1</text>
+    <path d="M562 217 h40 m-10 -8 l10 8 l-10 8" fill="none" stroke="#5b6366" stroke-width="2"/>
+    <rect x="612" y="190" width="110" height="54" rx="8" fill="#ffffff" stroke="#135b49" stroke-width="2"/>
+    <text x="667" y="228">1 – 1</text>
+
+    <!-- 3–0 to 4–0: the win was already safe -->
+    <rect x="442" y="280" width="110" height="54" rx="8" fill="#ffffff" stroke="#9dc09f" stroke-width="2"/>
+    <text x="497" y="318">3 – 0</text>
+    <path d="M562 307 h40 m-10 -8 l10 8 l-10 8" fill="none" stroke="#5b6366" stroke-width="2"/>
+    <rect x="612" y="280" width="110" height="54" rx="8" fill="#ffffff" stroke="#135b49" stroke-width="2"/>
+    <text x="667" y="318">4 – 0</text>
+  </g>
+
+  <rect x="800" y="108" width="116" height="38" rx="5" fill="#135b49"/>
+  <text x="930" y="140" font-size="32" font-weight="400" fill="#135b49">+2</text>
+  <rect x="800" y="198" width="58" height="38" rx="5" fill="#135b49"/>
+  <text x="872" y="230" font-size="32" font-weight="400" fill="#135b49">+1</text>
+  <line x1="801" y1="290" x2="801" y2="324" stroke="#bb2649" stroke-width="3"/>
+  <text x="816" y="320" font-size="32" font-weight="400" fill="#bb2649">0</text>
+</svg>
+<figcaption>Under the usual rule a win earns 3 points, a draw 1 and a loss 0. Goal tallies treat every goal alike; the paper values each goal by the points it adds to the result.</figcaption></figure>
+  <section class="inshort"><h2>In short</h2><p>Adding up output misleads when a unit of output is worth more in some states than in others. A framework for aligned performance measures, tested on football data; the first of three papers.</p></section>
+  <section><h2>Results</h2><p class="quiet">Results will appear here once the draft is public.</p></section>
+  <section id="cite"><h2>Cite</h2>
+    <p class="ref">Niklas Wallmeier (2026). “Counting What Counts: Misaligned Performance Measures, State-Dependent Value, and the Prediction of Future Performance.” Work in progress.</p>
+    <div class="bib"><pre id="bib">@unpublished{wallmeier2026counting,
+  author = {Wallmeier, Niklas},
+  title = {{Counting What Counts: Misaligned Performance Measures, State-Dependent Value, and the Prediction of Future Performance}},
+  year = {2026},
+  note = {Work in progress}
+}</pre><button type="button" class="btn" data-copy="bib">Copy BibTeX</button></div>
+  </section>
+  <nav class="prevnext" aria-label="More research"><a class="pn prev" href="../gender-honesty-groups/"><span>Previous</span>Gender Differences in Honesty</a><a class="pn next" href="../peer-effects-feedback/"><span>Next</span>Peer Effects under Different Relative Performance Feedback and Grouping Procedures</a></nav>
+</main>
+<footer class="foot" id="contact"><div class="foot-in">
+  <div><p class="foot-name">Niklas Wallmeier</p><p><a href="mailto:niklas.wallmeier@gmail.com">niklas.wallmeier@gmail.com</a></p></div>
+  <div class="foot-links"><a href="https://nikwall.de/">nikwall.de</a><a href="../../#research">Research</a><span>Updated November 2026</span></div>
+</div></footer>
+<script src="../../app.js" defer></script>
+</body>
+</html>
