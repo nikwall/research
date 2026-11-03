@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="vis" viewBox="0 0 1000 400" role="img" aria-label="The first woman makes a group more honest: an all-male group lies most; swap one man for a woman and the group shifts towards honesty. Schematic." font-family="Roboto, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" class="vis" viewBox="0 0 1000 400" role="img" aria-label="The first woman makes a group more honest: 50 percent of all-male groups lie, 19 percent of groups with exactly one woman." font-family="Roboto, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
   <defs>
     <symbol id="hog-person" viewBox="-16 -36 32 58"><circle cx="0" cy="-24" r="10"/><path d="M-15 21 v-15 a15 15 0 0 1 30 0 v15 z"/></symbol>
   </defs>
@@ -6,7 +6,7 @@
   <text x="48" y="104" font-size="46" font-weight="300" fill="#135b49">The first woman</text>
   <text x="48" y="158" font-size="46" font-weight="300" fill="#135b49">makes a group</text>
   <text x="48" y="212" font-size="46" font-weight="300" fill="#135b49">more honest.</text>
-  <text x="48" y="261" font-size="19" font-weight="300" fill="#2f3639">1,677 people in 477 groups,</text>
+  <text x="48" y="261" font-size="19" font-weight="300" fill="#2f3639">1,677 people in 447 groups,</text>
   <text x="48" y="288" font-size="19" font-weight="300" fill="#2f3639">talking by video chat.</text>
   <text x="48" y="315" font-size="19" font-weight="300" fill="#2f3639">Larger groups lie more.</text>
 
@@ -17,9 +17,9 @@
     <use href="#hog-person" x="660" y="110" width="44" height="80"/>
   </g>
   <rect x="560" y="214" width="144" height="16" rx="4" fill="#9dc09f"/>
-  <rect x="560" y="214" width="132" height="16" rx="4" fill="#135b49"/>
+  <rect x="560" y="214" width="120" height="16" rx="4" fill="#135b49"/>
   <text x="632" y="262" font-size="18" font-weight="400" fill="#2f3639" text-anchor="middle">all male</text>
-  <text x="632" y="286" font-size="17" font-weight="300" fill="#5b6366" text-anchor="middle">lies most</text>
+  <text x="632" y="286" font-size="17" font-weight="500" fill="#135b49" text-anchor="middle">50% lie</text>
 
   <path d="M724 150 h56 m-11 -9 l11 9 l-11 9" fill="none" stroke="#5b6366" stroke-width="2"/>
   <text x="752" y="136" font-size="15" font-weight="500" fill="#5b6366" text-anchor="middle">swap one</text>
@@ -31,9 +31,9 @@
   </g>
   <use href="#hog-person" x="900" y="110" width="44" height="80" fill="#bb2649"/>
   <rect x="800" y="214" width="144" height="16" rx="4" fill="#9dc09f"/>
-  <rect x="800" y="214" width="62" height="16" rx="4" fill="#135b49"/>
+  <rect x="800" y="214" width="46" height="16" rx="4" fill="#135b49"/>
   <text x="872" y="262" font-size="18" font-weight="400" fill="#2f3639" text-anchor="middle">one woman</text>
-  <text x="872" y="286" font-size="17" font-weight="300" fill="#5b6366" text-anchor="middle">honesty shift</text>
+  <text x="872" y="286" font-size="17" font-weight="500" fill="#bb2649" text-anchor="middle">19% lie</text>
 
-  <text x="560" y="340" font-size="15" font-weight="300" fill="#5b6366">Bars: willingness to lie, schematic.</text>
+  <text x="560" y="340" font-size="15" font-weight="300" fill="#5b6366">Share of groups that lie, groups of 2 to 5.</text>
 </svg>
