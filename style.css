@@ -92,8 +92,10 @@ a.pbtn:hover { border-color: var(--green); background: var(--tint); color: var(-
 .cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.9rem; }
 .card a { display: flex; flex-direction: column; height: 100%; background: var(--white); border: 1px solid var(--sage-2); border-radius: 6px; overflow: hidden; color: var(--ink); text-decoration: none; transition: border-color 0.15s, box-shadow 0.15s; }
 .card a:hover { border-color: var(--green); box-shadow: 0 6px 18px -12px rgba(19, 91, 73, 0.5); color: var(--ink); }
-.card-vis { position: relative; aspect-ratio: 5 / 2; background: var(--tint); border-bottom: 1px solid var(--sage-2); }
+.card-vis { position: relative; aspect-ratio: 5 / 2; overflow: hidden; background: var(--tint); border-bottom: 1px solid var(--sage-2); }
 .card-vis svg, .card-vis img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.vid { display: inline-flex; align-items: center; gap: 0.25rem; color: var(--crimson) !important; border: 1px solid var(--crimson); border-radius: 99px; padding: 0 0.45rem 0 0.35rem; }
+.vid svg { width: 0.5rem; height: 0.5rem; }
 .soon { position: absolute; left: 0.45rem; bottom: 0.45rem; background: var(--white); color: var(--muted); font-size: 0.65rem; font-weight: 400; padding: 0 0.4rem; border-radius: 3px; }
 .card-body { padding: 0.7rem 0.85rem 0.85rem; display: flex; flex-direction: column; gap: 0.3rem; flex: 1; }
 .kicker { display: flex; flex-wrap: wrap; gap: 0.25rem 0.7rem; align-items: center; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--green); }
