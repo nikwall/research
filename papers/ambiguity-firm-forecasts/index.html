@@ -18,7 +18,11 @@
 <body>
 <header class="bar"><div class="bar-in">
   <a class="brand" href="../../">Niklas Wallmeier</a>
-  <nav aria-label="Site"><a href="../../#research">Research</a><a href="../../#background">Background</a><a href="../../#contact">Contact</a></nav>
+  <div class="bar-right">
+    <nav aria-label="Site"><a href="../../#research">Research</a><a href="../../#background">Background</a><a href="../../#contact">Contact</a></nav>
+    <span class="bar-sep" aria-hidden="true"></span>
+    <a class="bar-main" href="https://nikwall.de/" title="My main site: work, arq decisions and projects">nikwall.de<span aria-hidden="true">↗</span></a>
+  </div>
 </div></header>
 
 <main class="paper">
@@ -31,7 +35,9 @@
     <div class="actions"><a class="btn primary" href="mailto:niklas.wallmeier@gmail.com?subject=Ambiguity, Pessimism, and Firm Decisions">Ask for the draft</a><a class="btn" href="#cite">Cite</a></div>
     
   </header>
-  <figure class="media embed"><!-- Interactive explainer for "Ambiguity, Pessimism, and Firm Decisions".
+  <figure class="media"><video controls preload="metadata" poster="../../media/ambiguity-firm-forecasts/poster.jpg"><source src="../../media/ambiguity-firm-forecasts/ambiguity_30s.mp4" type="video/mp4"></video><figcaption>30 seconds from the question to the pilot: pessimism lowers a forecast, risk widens it, ambiguity changes its form, for winners and losers alike.</figcaption></figure>
+  <section class="inshort"><h2>In short</h2><p>When firms cannot put probabilities on the consequences of a shock, they may stop quantifying their forecasts instead of lowering them. A model, and a test on US annual reports around COVID-19, the war in Ukraine and the 2025 tariffs, contrasted with German firms that must publish forecasts by law.</p></section>
+  <section><h2>What the model predicts</h2><ul class="findings"><li>Pessimism lowers the forecast, risk widens its range, and ambiguity changes its form.</li><li>Under ambiguity, firms fall silent where forecasts are voluntary, as in the US. Where forecasts are mandatory, as in Germany, they leave the shock out, coarsen the forecast or add a reservation.</li><li>This happens whether the shock is good or bad news for the firm. Pessimism and hiding bad news cannot produce that pattern.</li><li>A firm that leaves the shock out keeps its old number but invests less, as if the worst case were true.</li></ul><div class="results-embed"><!-- Interactive explainer for "Ambiguity, Pessimism, and Firm Decisions".
      Inlined into the paper page by build.py (media type "embed"); uses the page's Roboto and arq colour tokens.
      Numbers are illustrative: a firm that expected revenue of 120-130 million before the shock. -->
 <style>
@@ -187,9 +193,7 @@
   render();
 })();
 </script>
-<figcaption>Illustrative numbers for a firm that expected revenue of 120–130 million before the shock. Switch between the four explanations, between good and bad news, and between the US and Germany.</figcaption></figure>
-  <section class="inshort"><h2>In short</h2><p>When firms cannot put probabilities on the consequences of a shock, they may stop quantifying their forecasts instead of lowering them. A model, and a test on US annual reports around COVID-19, the war in Ukraine and the 2025 tariffs, contrasted with German firms that must publish forecasts by law.</p></section>
-  <section><h2>What the model predicts</h2><ul class="findings"><li>Pessimism lowers the forecast, risk widens its range, and ambiguity changes its form.</li><li>Under ambiguity, firms fall silent where forecasts are voluntary, as in the US. Where forecasts are mandatory, as in Germany, they leave the shock out, coarsen the forecast or add a reservation.</li><li>This happens whether the shock is good or bad news for the firm. Pessimism and hiding bad news cannot produce that pattern.</li><li>A firm that leaves the shock out keeps its old number but invests less, as if the worst case were true.</li></ul></section>
+</div><p class="quiet">Try it: illustrative numbers for a firm that expected revenue of 120–130 million before the shock. Switch between the four explanations, between good and bad news, and between the US and Germany.</p></section>
   <section><h2>How I test it</h2><p class="block-text">Filing deadlines placed thousands of US annual reports just before or just after three shocks: COVID-19 (11 March 2020), the invasion of Ukraine (24 February 2022) and the tariff announcements of 2 April 2025. Which side of the date a report falls on is close to chance, so comparing the two sides shows what the shock did to the forecast. Matched German and European firms, which must publish forecasts by law, show what a mandate changes.</p></section>
   <section><h2>Pilot results</h2><p class="quiet">A pilot with the management reports of 45 German firms for fiscal 2021, around the invasion of Ukraine. Only four reports were signed before the invasion, and they come from large firms that close their books early, so the pilot illustrates the pattern but is not the main test. That runs on US filings.</p><ul class="findings"><li>None of the 4 reports signed before the invasion mention the war; 38 of the 41 signed after it do, and the share rises with the time since the invasion.</li><li>The most common response is to keep the pre-war number and leave the war out of it, or to add a reservation: 20 of 38 reports.</li><li>Firms that stood to gain from the war, such as Rheinmetall and K+S, left it out just like firms that stood to lose.</li><li>The more directly a firm was exposed, the more likely it changed the form of its forecast instead of naming the war only as a risk.</li></ul><div class="results-embed"><!-- Pilot results for "Ambiguity, Pessimism, and Firm Decisions", inlined into the Results section by build.py.
      Source: privat/ambiguity_pessimism/pilot/Go-NoGo_Notiz_Design.md (45 management reports for fiscal 2021 analysed).

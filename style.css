@@ -43,6 +43,12 @@ b, strong { font-weight: 500; }
 .bar nav { display: flex; gap: 1.4rem; font-size: 0.92rem; font-weight: 400; }
 .bar nav a { color: var(--muted); text-decoration: none; }
 .bar nav a:hover { color: var(--green); }
+/* the way to nikwall.de: set apart from the page navigation, so it is seen but not hit by mistake */
+.bar-right { display: flex; align-items: center; gap: 0.5rem 1.4rem; flex-wrap: wrap; }
+.bar-sep { width: 1px; height: 1.3rem; background: var(--sage-2); margin-left: 0.4rem; }
+.bar-main { display: inline-flex; align-items: center; padding: 0.22rem 0.8rem; border: 1px solid var(--green); border-radius: 99px; color: var(--green); background: var(--tint); font-size: 0.86rem; font-weight: 500; text-decoration: none; white-space: nowrap; }
+.bar-main:hover { background: var(--white); }
+.bar-main span { margin-left: 0.3rem; }
 
 /* intro: person on the left, about and profiles on the right */
 .intro { border-bottom: 1px solid var(--sage-2); }
@@ -179,6 +185,8 @@ mark.tbd { background: var(--yellow); color: var(--ink); font-size: 0.74rem; fon
   .draft ul { columns: 1; }
 }
 @media (max-width: 560px) {
+  .bar-sep { display: none; }
+  .bar-right { width: 100%; justify-content: space-between; }
   .facts { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; }
   .cards { grid-template-columns: minmax(0, 1fr); }
   .portrait { width: 4.25rem; height: 4.25rem; }
