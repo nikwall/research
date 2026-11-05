@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="vis" viewBox="0 0 1000 400" role="img" aria-label="Five uncertainties each, one shared set of questions: three lists of five merge into one set, and the uncertainty several people name leads the set and spans a map." font-family="Roboto, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+  <rect width="1000" height="400" fill="#f1f5f0"/>
+  <text x="48" y="104" font-size="46" font-weight="300" fill="#135b49">Five uncertainties</text>
+  <text x="48" y="158" font-size="46" font-weight="300" fill="#135b49">each, one shared</text>
+  <text x="48" y="212" font-size="46" font-weight="300" fill="#135b49">set of questions.</text>
+  <text x="48" y="261" font-size="19" font-weight="300" fill="#2f3639">I ask scholars at Harvard and MIT what they</text>
+  <text x="48" y="288" font-size="19" font-weight="300" fill="#2f3639">see as most open, for the economy and for</text>
+  <text x="48" y="315" font-size="19" font-weight="300" fill="#2f3639">economics as a field. In preparation.</text>
+
+  <text x="536" y="66" font-size="15" font-weight="500" fill="#5b6366" letter-spacing="1.5" text-anchor="middle">FIVE EACH</text><text x="716" y="66" font-size="15" font-weight="500" fill="#5b6366" letter-spacing="1.5" text-anchor="middle">ONE SET</text><text x="884" y="66" font-size="15" font-weight="500" fill="#5b6366" letter-spacing="1.5" text-anchor="middle">TWO MAPS</text>
+<path d="M600 109 C628 109 628 258 654 258" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 121 C628 121 628 144 654 144" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 133 C628 133 628 296 654 296" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 145 C628 145 628 220 654 220" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 183 C628 183 628 144 654 144" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 195 C628 195 628 182 654 182" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 219 C628 219 628 258 654 258" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 231 C628 231 628 144 654 144" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 269 C628 269 628 144 654 144" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 293 C628 293 628 144 654 144" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 305 C628 305 628 144 654 144" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 317 C628 317 628 296 654 296" fill="none" stroke="#d7e1d2" stroke-width="1.5"/>
+<path d="M600 97 C628 97 628 106 654 106" fill="none" stroke="#bb2649" stroke-width="2.5"/>
+<path d="M600 207 C628 207 628 106 654 106" fill="none" stroke="#bb2649" stroke-width="2.5"/>
+<path d="M600 281 C628 281 628 106 654 106" fill="none" stroke="#bb2649" stroke-width="2.5"/>
+<rect x="472" y="84" width="128" height="74" rx="6" fill="#ffffff" stroke="#d7e1d2" stroke-width="1.5"/>
+<rect x="482" y="93" width="82" height="8" rx="2" fill="#bb2649"/>
+<rect x="482" y="105" width="71" height="8" rx="2" fill="#9dc09f"/>
+<rect x="482" y="117" width="103" height="8" rx="2" fill="#9dc09f"/>
+<rect x="482" y="129" width="66" height="8" rx="2" fill="#9dc09f"/>
+<rect x="482" y="141" width="68" height="8" rx="2" fill="#9dc09f"/>
+<rect x="472" y="170" width="128" height="74" rx="6" fill="#ffffff" stroke="#d7e1d2" stroke-width="1.5"/>
+<rect x="482" y="179" width="99" height="8" rx="2" fill="#9dc09f"/>
+<rect x="482" y="191" width="94" height="8" rx="2" fill="#9dc09f"/>
+<rect x="482" y="203" width="64" height="8" rx="2" fill="#bb2649"/>
+<rect x="482" y="215" width="67" height="8" rx="2" fill="#9dc09f"/>
+<rect x="482" y="227" width="88" height="8" rx="2" fill="#9dc09f"/>
+<rect x="472" y="256" width="128" height="74" rx="6" fill="#ffffff" stroke="#d7e1d2" stroke-width="1.5"/>
+<rect x="482" y="265" width="77" height="8" rx="2" fill="#9dc09f"/>
+<rect x="482" y="277" width="97" height="8" rx="2" fill="#bb2649"/>
+<rect x="482" y="289" width="89" height="8" rx="2" fill="#9dc09f"/>
+<rect x="482" y="301" width="98" height="8" rx="2" fill="#9dc09f"/>
+<rect x="482" y="313" width="76" height="8" rx="2" fill="#9dc09f"/>
+<rect x="654" y="84" width="124" height="246" rx="6" fill="#ffffff" stroke="#d7e1d2" stroke-width="1.5"/>
+<rect x="666" y="100" width="100" height="12" rx="3" fill="#bb2649"/>
+<rect x="666" y="138" width="84" height="12" rx="3" fill="#9ba0a5"/>
+<rect x="666" y="176" width="68" height="12" rx="3" fill="#9dc09f"/>
+<rect x="666" y="214" width="52" height="12" rx="3" fill="#9dc09f"/>
+<rect x="666" y="252" width="38" height="12" rx="3" fill="#9dc09f"/>
+<rect x="666" y="290" width="26" height="12" rx="3" fill="#9dc09f"/>
+<path d="M778 106 C802 106 794 191 824 191" fill="none" stroke="#bb2649" stroke-width="2.5"/>
+<path d="M778 144 C824 144 883 92 883 132" fill="none" stroke="#9ba0a5" stroke-width="2.5"/>
+<rect x="834" y="142" width="118" height="118" rx="4" fill="#f1f5f0" stroke="#9dc09f" stroke-width="1.5"/>
+<rect x="824" y="132" width="59" height="59" fill="#ffffff"/>
+<rect x="883" y="132" width="59" height="59" fill="#d7e1d2"/>
+<rect x="824" y="191" width="59" height="59" fill="#d7e1d2"/>
+<rect x="883" y="191" width="59" height="59" fill="#ffffff"/>
+<rect x="824" y="132" width="118" height="118" fill="none" stroke="#9dc09f" stroke-width="1.5"/>
+<line x1="883" y1="132" x2="883" y2="250" stroke="#9ba0a5" stroke-width="2.5"/>
+<line x1="824" y1="191" x2="942" y2="191" stroke="#bb2649" stroke-width="3"/>
+  <text x="716" y="362" font-size="15" font-weight="300" fill="#5b6366" text-anchor="middle">Schematic, not data</text>
+</svg>
